@@ -1,7 +1,7 @@
 version: '3'
 services:
   mariadb:
-    container_name: mariadb # Le nom du container, oui vraiment.
+    container_name: mariadb # Le nom du container
     networks:
       - inception # à quel network il appartient
     build:

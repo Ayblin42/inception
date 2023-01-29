@@ -1,10 +1,12 @@
 #!/bin/bash
 
-service mysql start
+# Check if the /var/lib/mysql/wordpress_data directory exists
+if [ ! -d "/var/lib/mysql/wordpress_data" ]; then
+    service mysql start
 
-sleep 1
+    sleep 3
 
-mysql -u root <<END
+    mysql -u root <<END
 CREATE DATABASE IF NOT EXISTS $SQL_DATABASE;
 CREATE USER IF NOT EXISTS '$SQL_USER'@'localhost' IDENTIFIED BY '$SQL_PASSWORD';
 GRANT ALL PRIVILEGES ON $SQL_DATABASE.* TO '$SQL_USER'@'%';
@@ -12,9 +14,10 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$SQL_ROOT_PASSWORD');
 FLUSH PRIVILEGES;
 END
 
-service mysql stop
+    service mysql stop
 
-sleep 1
+    sleep 3
+fi
 
 mysqld_safe
 

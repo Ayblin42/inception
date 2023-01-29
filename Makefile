@@ -17,8 +17,8 @@ info:
 clean:
 	docker-compose down -v
 fclean: clean
-	@sudo rm -rf data/mariadb/*
-	@sudo rm -rf data/wordpress/*
+	@sudo rm -rf /home/ayblin/mariadb/*
+	@sudo rm -rf /home/ayblin/wordpress/*
 	@sudo docker system prune -af
 
 re: fclean all

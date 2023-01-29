@@ -19,9 +19,9 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 COPY conf/php.conf etc/php/7.3/fpm/pool.d/www.conf
 COPY conf/WP-config.sh /WP-config.sh
-COPY conf/wp-config.php /var/www/wordpress/wp-config.php
-RUN chmod 774 /var/www/wordpress/wp-config.php
-RUN chown www-data:www-data /var/www/wordpress/wp-config.php
+#COPY conf/wp-config.php /var/www/wordpress/wp-config.php
+#RUN chmod 774 /var/www/wordpress/wp-config.php
+#RUN chown www-data:www-data /var/www/wordpress/wp-config.php
 
 ENTRYPOINT ["bash", "WP-config.sh"]
 
