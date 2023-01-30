@@ -1,0 +1,15 @@
+--# Create table SQL_DATABASE
+CREATE DATABASE IF NOT EXISTS ${SQL_DATABASE};
+
+--# Create user
+CREATE USER IF NOT EXISTS '${SQL_USER}'@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';
+
+--# Give right to User
+GRANT ALL PRIVILEGES ON ${SQL_DATABASE}.* TO '${SQL_USER}'@'%'
+	IDENTIFIED BY '${SQL_PASSWORD}';
+
+--# Change root password
+ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';
+
+--# Refresh change
+FLUSH PRIVILEGES;
