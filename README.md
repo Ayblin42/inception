@@ -16,4 +16,4 @@ Les concepts abordés sont :
 
 Pour lancer le projet, utiliser la commande suivante :
 
-> make
+``` make ```
