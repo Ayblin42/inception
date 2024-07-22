@@ -4,12 +4,12 @@ Douzième projet de 42, il est question de mettre en place une petite infrastruc
 
 Les concepts abordés sont :
 
-   * La dockérisation des services : NGINX, PHP, MariaDB, Radis, ProFTP et Minecraft.
+   * La dockérisation des services : NGINX, Wordpress, MariaDB
    * L'orchestrateur Docker Compose.
 
 ## Pré-requis :
 
-   * Une distribution Linux majeure à jour ou macOS Catalina ou plus.
+   * Une distribution Linux majeure à jour.
    * Docker et Docker compose installés
 
 ## Lancement du projet :
